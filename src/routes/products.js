@@ -1,16 +1,19 @@
 const express = require('express');
-const {getProducts,getProductById} = require('../controllers/getProducts');
+const {getProducts,getProductById,createProduct,updateProduct,deleteProduct} = require('../controllers/productsController');
 
 const router = express.Router();
 
 // middleware that is specific to this router
-router.use((req, res, next) => {
-
-  next()
-});
+router.use(express.json());
 
 router.get('/', getProducts);
 
-router.get('/id/:id', getProductById);
+router.get('/:id', getProductById);
+
+router.post('/', createProduct);
+
+router.put('/:id', updateProduct);
+
+router.delete('/:id', deleteProduct);
 
 module.exports = router;

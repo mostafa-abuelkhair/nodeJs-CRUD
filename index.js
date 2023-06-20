@@ -1,7 +1,10 @@
 const express = require('express');
 const productsRouter = require('./src/routes/products');
+const productsModel = require('./src/models/productsModel');
 
 PORT = "8080";
+
+productsModel.getApiData();
 
 const app = express();
 
