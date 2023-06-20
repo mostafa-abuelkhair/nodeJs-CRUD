@@ -6,6 +6,9 @@ const router = express.Router();
 // middleware that is specific to this router
 router.use(express.json());
 
+
+
+//here the CURD methodes routes to it's controllers
 router.get('/', getProducts);
 
 router.get('/:id', getProductById);
