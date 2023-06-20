@@ -79,8 +79,10 @@ exports.find = (id) => {
 
  exports.delete = (id) => { 
     let i = products.findIndex( p => p.id==id );
- 
-    products.splice(i);
+    
+    if(i===-1){return "product not found"}
+
+    else{products.splice(i);}
 
     return "product deleted";
  
