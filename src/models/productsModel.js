@@ -67,7 +67,7 @@ exports.find = (id) => {
         //patch the properties found in the input object to the product need to be updated
         Object.keys(products[i]).forEach( k => {products[i][k] = p[k] || products[i][k]} );
 
-        //changing the category if needed to be updated, if the new category id not found leave the category not updated
+        //changes the category if needed to be updated, if the new category id not found, it leaves the category not updated
         if (p.categoryId !== undefined){ products[i].category = categories.find( c => c.id === p.categoryId ) || products[i].category}
 
         //update the (updated at) date
