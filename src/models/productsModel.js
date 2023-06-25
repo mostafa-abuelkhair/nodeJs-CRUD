@@ -82,7 +82,7 @@ exports.find = (id) => {
     
     if(i===-1){return "product not found"}
 
-    else{products.splice(i);}
+    else{products.splice(i,1)}
 
     return "product deleted";
  
